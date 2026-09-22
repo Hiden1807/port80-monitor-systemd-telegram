@@ -1,0 +1,4 @@
+config/telegram.conf
+*.conf
+!*.conf.example
+state.txt

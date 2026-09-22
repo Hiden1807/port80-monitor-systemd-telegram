@@ -1,0 +1,9 @@
+[Unit]
+Description=Declenche check-port80.service toutes les 60 secondes
+[Timer]
+OnBootSec=30
+OnUnitActiveSec=60
+AccuracySec=1s
+Unit=check-port80.service
+[Install]
+WantedBy=timers.target

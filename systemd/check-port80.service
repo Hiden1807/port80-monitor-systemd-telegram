@@ -1,0 +1,14 @@
+[Unit]
+Description=Verification ponctuelle de la disponibilite du port 80 (HTTP)
+Wants=network-online.target
+After=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/check_port80.sh
+# --- Durcissement sécurité (voir aussi §5) ---
+User=root
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/port80-monitor /tmp
+ProtectHome=true
+PrivateTmp=true
